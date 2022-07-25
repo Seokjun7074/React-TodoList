@@ -1,0 +1,12 @@
+.Header {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  /* background-color: blue; */
+}
+
+.Header > span {
+  font-size: 18px;
+}
