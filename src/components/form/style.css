@@ -1,4 +1,29 @@
 .Form {
+  padding: 20px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+}
+.input_box {
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+  gap: 20px;
+}
+.input_box > input {
+  border: none;
+  border-radius: 12px;
+  height: 40px;
+  padding: 0 12px;
+  width: 240px;
+}
+.add_button {
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 140px;
+  font-weight: 700;
+  color: #ffffff;
   background-color: teal;
 }
