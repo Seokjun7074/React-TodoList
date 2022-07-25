@@ -34,11 +34,12 @@ const dummy = [
 const Layout = () => {
   // console.log(dummy[0]);
   const [todo, setTodo] = useState([]);
+  console.log("todo:", todo);
   return (
     <div className="Layout">
       <Header></Header>
-      <Form></Form>
-      <List todos={dummy}></List>
+      <Form todo={todo} setTodo={setTodo}></Form>
+      <List todos={todo}></List>
     </div>
   );
 };
