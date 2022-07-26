@@ -8,13 +8,15 @@ const Todo = ({ setTodo, todo, todos }) => {
       todos.map((e) => (e.id === todo.id ? { ...e, isDone: !e.isDone } : e))
     );
   };
-  console.log(todo.title, todo.isDone);
+  // console.log(todos);
   return (
     <div className="Todo">
       <h2 className="todo_title">{todo.title}</h2>
       <div>{todo.content}</div>
-      <button onClick={removeTodo}>삭제하기</button>
-      <button onClick={editIsDone}>{todo.isDone ? "취소" : "완료"}</button>
+      <div className="button_container">
+        <button onClick={removeTodo}>삭제하기</button>
+        <button onClick={editIsDone}>{todo.isDone ? "취소" : "완료"}</button>
+      </div>
     </div>
   );
 };
