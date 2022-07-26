@@ -1,5 +1,14 @@
 .List {
-  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.List > h2 {
+  text-align: left;
+}
+.list_container {
+  /* margin-top: 20px; */
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
