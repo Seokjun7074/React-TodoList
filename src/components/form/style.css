@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #eee;
+  background-color: teal;
 }
 .input_box {
   align-items: center;
@@ -18,12 +18,16 @@
   padding: 0 12px;
   width: 240px;
 }
+.input_box > label {
+  color: #fff;
+}
 .add_button {
   border: none;
   border-radius: 10px;
   height: 40px;
   width: 140px;
   font-weight: 700;
-  color: #ffffff;
-  background-color: teal;
+  color: teal;
+  background-color: white;
+  cursor: pointer;
 }

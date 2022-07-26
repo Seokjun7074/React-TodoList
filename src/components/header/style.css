@@ -4,5 +4,6 @@
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  /* background-color: blue; */
+  font-weight: 700;
+  color: teal;
 }

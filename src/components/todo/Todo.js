@@ -8,7 +8,6 @@ const Todo = ({ setTodo, todo, todos }) => {
       todos.map((e) => (e.id === todo.id ? { ...e, isDone: !e.isDone } : e))
     );
   };
-  // console.log(todos);
   return (
     <div className="Todo">
       <h2 className="todo_title">{todo.title}</h2>

@@ -12,6 +12,7 @@
 }
 .button_container > button {
   margin-top: 20px;
+  cursor: pointer;
   border: 2px solid tomato;
   background-color: #fff;
   border-radius: 10px;
