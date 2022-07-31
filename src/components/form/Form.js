@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import "./style.css";
 const Form = ({ todo, setTodo }) => {
-  const nextId = useRef(0); // 고유아이디 useRef는 값이 변해도 리렌더 안함
+  const nextId = useRef(2); // 고유아이디 useRef는 값이 변해도 리렌더 안함
 
   // input에서 받는 값
   const [inputs, setInputs] = useState({
@@ -10,7 +10,6 @@ const Form = ({ todo, setTodo }) => {
     content: "",
     isDone: false,
   });
-  // console.log(inputs);
   const { title, content } = inputs;
   const onChangeHandler = (e) => {
     setInputs({
