@@ -1,8 +1,11 @@
 import { useRef, useState } from "react";
 import "./style.css";
-const Form = ({ todo, setTodo }) => {
-  const nextId = useRef(2); // 고유아이디 useRef는 값이 변해도 리렌더 안함
+import { useDispatch } from "react-redux";
+import { createTodos, deleteTodos } from "../../redux/modules/todo_module";
 
+const Form = () => {
+  const nextId = useRef(2); // 고유아이디 useRef는 값이 변해도 리렌더 안함 initeState가 있어서 2부터 시작
+  const dispatch = useDispatch(); // dispatch 불러오기
   // input에서 받는 값
   const [inputs, setInputs] = useState({
     id: nextId.current,
@@ -18,14 +21,17 @@ const Form = ({ todo, setTodo }) => {
       [e.target.name]: e.target.value,
     });
   };
+  // console.log(inputs);
 
   const onSubmitHandler = () => {
     // 새로 만들어줄 객체 생성
     const newData = {
       ...inputs,
     };
-    // 투두리스트 목록에 넣어줌
-    setTodo([...todo, newData]);
+    // 투두리스트 목록에 넣어줌 리팩토링 대상
+    // setTodo([...todo, newData]);
+    dispatch(createTodos(newData));
+
     // 빈칸으로 만들어주는 부분
     setInputs({ ...inputs, title: "", content: "" });
     // 고유 아이디 1증가

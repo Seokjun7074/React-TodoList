@@ -13,10 +13,16 @@ const DELETE = "todo/DELETE";
 const initialState = {
   list: [
     {
-      id: 1,
-      titile: "title",
-      content: "content",
+      id: 0,
+      title: "title 1",
+      content: "content 1",
       isDone: false,
+    },
+    {
+      id: 1,
+      title: "title 2",
+      content: "content 2",
+      isDone: true,
     },
   ],
 };
