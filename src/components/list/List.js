@@ -1,14 +1,15 @@
 import Todo from "../todo/Todo";
 import "./style.css";
-const List = ({ todos, setTodo, check }) => {
+const List = ({ todos, check }) => {
+  // console.log(todos);
   return (
     <div className="List">
       <h2>{check ? "Done..! 🎉" : "Working.. 🔥"}</h2>
       <div className="list_container">
         {todos
           .filter((todo) => todo.isDone === check)
-          .map((todo, idx) => (
-            <Todo key={idx} setTodo={setTodo} todo={todo} todos={todos}></Todo>
+          .map((todo) => (
+            <Todo key={todo.id} todo={todo}></Todo>
           ))}
       </div>
     </div>

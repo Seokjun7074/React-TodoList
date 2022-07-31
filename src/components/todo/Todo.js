@@ -1,12 +1,18 @@
 import "./style.css";
-const Todo = ({ setTodo, todo, todos }) => {
+
+import { useDispatch } from "react-redux";
+import { deleteTodos } from "../../redux/modules/todo_module";
+
+const Todo = ({ todo }) => {
+  const dispatch = useDispatch();
+
   const removeTodo = () => {
-    setTodo(todos.filter((e) => e.id !== todo.id));
+    dispatch(deleteTodos(todo.id));
   };
   const editIsDone = () => {
-    setTodo(
-      todos.map((e) => (e.id === todo.id ? { ...e, isDone: !e.isDone } : e))
-    );
+    // setTodo(
+    //   todos.map((e) => (e.id === todo.id ? { ...e, isDone: !e.isDone } : e))
+    // );
   };
   return (
     <div className="Todo">

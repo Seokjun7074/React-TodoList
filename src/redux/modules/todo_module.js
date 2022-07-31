@@ -32,7 +32,7 @@ export function createTodos(todos) {
   return { type: CREATE, todos: todos };
 }
 export function deleteTodos(todos) {
-  console.log(todos);
+  //   console.log(todos);
   return { type: DELETE, todos: todos };
 }
 
@@ -44,7 +44,11 @@ export default function redcer(state = initialState, action = {}) {
       return { list: new_todo_list };
     }
     case "todo/DELETE": {
-      return { list: [] };
+      const idx = action.todos;
+      const new_todo_list = [...state.list].filter((e) => {
+        return parseInt(e.id) !== parseInt(idx);
+      });
+      return { list: [...new_todo_list] };
     }
     // do reducer stuff
     default:

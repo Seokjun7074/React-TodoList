@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import "./style.css";
 import { useDispatch } from "react-redux";
-import { createTodos, deleteTodos } from "../../redux/modules/todo_module";
+import { createTodos } from "../../redux/modules/todo_module";
 
 const Form = () => {
   const nextId = useRef(2); // 고유아이디 useRef는 값이 변해도 리렌더 안함 initeState가 있어서 2부터 시작
@@ -28,8 +28,7 @@ const Form = () => {
     const newData = {
       ...inputs,
     };
-    // 투두리스트 목록에 넣어줌 리팩토링 대상
-    // setTodo([...todo, newData]);
+    // dispatch를 통해 todolist 작성
     dispatch(createTodos(newData));
 
     // 빈칸으로 만들어주는 부분
