@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { useDispatch } from "react-redux";
 import { deleteTodos, toggleTodos } from "../../redux/modules/todo_module";
+import { useParams, Link } from "react-router-dom";
 
 const Todo = ({ todo }) => {
   const dispatch = useDispatch();
@@ -12,16 +13,18 @@ const Todo = ({ todo }) => {
   };
   const editIsDone = () => {
     dispatch(toggleTodos(todo.id));
-
-    // setTodo(
-    //   todos.map((e) => (e.id === todo.id ? { ...e, isDone: !e.isDone } : e))
-    // );
   };
+
   return (
     <div className="Todo">
-      <h2 className="todo_title">{todo.title}</h2>
+      <div className="todo_container">
+        <h2 className="todo_title">{todo.title}</h2>
+        <Link className="link_text" to={`/detail/${todo.id}`}>
+          상세정보
+        </Link>
+      </div>
       <div>{todo.content}</div>
-      <div className="button_container">
+      <div className="todo_container">
         <Button onClick={editIsDone}>{todo.isDone ? "취소" : "완료"}</Button>
         <Button delete onClick={removeTodo}>
           삭제하기

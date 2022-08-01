@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import Form from "../form/Form";
-import Header from "../header/Header";
-import List from "../list/List";
+import Form from "../../components/form/Form";
+import Header from "../../components/header/Header";
+import List from "../../components/list/List";
 import "./style.css";
 
-const Layout = () => {
+const Home = () => {
   // Redux store에서 데이터 가져오기
   const todoList = useSelector((state) => {
     return state.todo_modules.list;
@@ -13,7 +13,7 @@ const Layout = () => {
   // console.log(todoList);
 
   return (
-    <div className="Layout">
+    <div className="Home">
       <Header></Header>
       <Form></Form>
       <List todos={todoList} check={false}></List>
@@ -22,4 +22,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Home;

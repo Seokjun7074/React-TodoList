@@ -5,8 +5,12 @@
   width: 270px;
   text-align: start;
 }
-.button_container {
+.todo_container {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   gap: 20px;
+}
+.link_text {
+  text-decoration: none;
+  color: gray;
 }
