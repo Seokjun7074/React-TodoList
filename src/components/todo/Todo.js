@@ -2,7 +2,7 @@ import "./style.css";
 import styled from "styled-components";
 
 import { useDispatch } from "react-redux";
-import { deleteTodos, toggleTodos } from "../../redux/modules/todo_module";
+import { deleteTodos, toggleTodos } from "../../redux/modules/todo_slice";
 import { useParams, Link } from "react-router-dom";
 
 const Todo = ({ todo }) => {

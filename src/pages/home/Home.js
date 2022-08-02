@@ -8,7 +8,7 @@ import "./style.css";
 const Home = () => {
   // Redux store에서 데이터 가져오기
   const todoList = useSelector((state) => {
-    return state.todo_modules.list;
+    return state.todo.list;
   });
   // console.log(todoList);
 

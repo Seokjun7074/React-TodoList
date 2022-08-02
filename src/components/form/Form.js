@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import "./style.css";
 import { useDispatch } from "react-redux";
-import { createTodos } from "../../redux/modules/todo_module";
+// import { createTodos } from "../../redux/modules/todo_module";
+import { createTodos } from "../../redux/modules/todo_slice";
 
 const Form = () => {
   const nextId = useRef(2); // 고유아이디 useRef는 값이 변해도 리렌더 안함 initeState가 있어서 2부터 시작
@@ -26,7 +27,7 @@ const Form = () => {
   // console.log(inputs);
 
   const onSubmitHandler = () => {
-    console.log(inputs.content, inputs.title);
+    // console.log(inputs.content, inputs.title);
     if (inputs.title === "") {
       alert("제목은 입력해야지!");
       title_input.current.focus();

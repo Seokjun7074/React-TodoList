@@ -8,7 +8,7 @@ const Detail = () => {
   const navigate = useNavigate();
 
   const todoList = useSelector((state) => {
-    return state.todo_modules.list.filter((e) => {
+    return state.todo.list.filter((e) => {
       return parseInt(e.id) === parseInt(param);
     });
   })[0];

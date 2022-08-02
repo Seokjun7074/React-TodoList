@@ -4,13 +4,6 @@ const DELETE = "todo/DELETE";
 const TOGGLE = "todo/TOGGLE";
 
 // 초기설정값
-// {
-//   id: 1,
-//   titile: "title",
-//   content: "content",
-//   isDone: false,
-// },
-
 const initialState = {
   list: [
     {
