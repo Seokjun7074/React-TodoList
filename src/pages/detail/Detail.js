@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Header from "../../components/header/Header";
+import Layout from "../../components/layout/Layout";
 
 const Detail = () => {
   const param = useParams().id;
@@ -14,25 +14,20 @@ const Detail = () => {
   })[0];
   // 인덱스로 하는게 맞나..?
 
-  console.log(todoList.title);
-  console.log(todoList.content);
-
   return (
-    <div className="Detail">
-      <Detail_container>
-        <Header></Header>
-        <Todo_container>
-          <Todo_container_header>
-            <span>id: {todoList.id}</span>
-            <button onClick={() => navigate(-1)}>뒤로가기</button>
-          </Todo_container_header>
-          <Todo_container_body>
-            <h2>Title: {todoList.title}</h2>
-            <span>Content: {todoList.content}</span>
-          </Todo_container_body>
-        </Todo_container>
-      </Detail_container>
-    </div>
+    <Layout>
+      <Todo_container>
+        <Todo_container_header>
+          <span>id: {todoList.id}</span>
+          <button onClick={() => navigate(-1)}>뒤로가기</button>
+        </Todo_container_header>
+
+        <Todo_container_body>
+          <h2>Title: {todoList.title}</h2>
+          <span>Content: {todoList.content}</span>
+        </Todo_container_body>
+      </Todo_container>
+    </Layout>
   );
 };
 

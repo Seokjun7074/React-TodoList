@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import Form from "../../components/form/Form";
-import Header from "../../components/header/Header";
 import List from "../../components/list/List";
+import Layout from "../../components/layout/Layout";
 import "./style.css";
 
 const Home = () => {
@@ -10,15 +9,13 @@ const Home = () => {
   const todoList = useSelector((state) => {
     return state.todo.list;
   });
-  // console.log(todoList);
 
   return (
-    <div className="Home">
-      <Header></Header>
+    <Layout>
       <Form></Form>
       <List todos={todoList} check={false}></List>
       <List todos={todoList} check={true}></List>
-    </div>
+    </Layout>
   );
 };
 

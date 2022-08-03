@@ -6,6 +6,9 @@ import { createTodos } from "../../redux/modules/todo_slice";
 
 const Form = () => {
   const nextId = useRef(2); // 고유아이디 useRef는 값이 변해도 리렌더 안함 initeState가 있어서 2부터 시작
+
+  console.log(nextId.current);
+
   const title_input = useRef();
   const content_input = useRef();
   const dispatch = useDispatch(); // dispatch 불러오기
