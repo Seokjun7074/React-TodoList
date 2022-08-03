@@ -19,7 +19,7 @@ const Detail = () => {
       <Todo_container>
         <Todo_container_header>
           <span>id: {todoList.id}</span>
-          <button onClick={() => navigate(-1)}>뒤로가기</button>
+          <Back_button onClick={() => navigate(-1)}>뒤로가기</Back_button>
         </Todo_container_header>
 
         <Todo_container_body>
@@ -31,15 +31,6 @@ const Detail = () => {
   );
 };
 
-const Detail_container = styled.div`
-  max-width: 1200px;
-  min-width: 800px;
-  margin: 0 auto;
-  min-height: 100vh;
-  height: 100%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  background-color: white;
-`;
 const Todo_container = styled.div`
   margin: 0 auto;
   padding: 10px;
@@ -55,10 +46,22 @@ const Todo_container_header = styled.div`
   justify-content: space-between;
 `;
 const Todo_container_body = styled.div`
-  /* display: flex; */
-  /* justify-content: start; */
   margin-top: 20px;
   padding: 10px;
   text-align: start;
+`;
+
+const Back_button = styled.button`
+  border: none;
+  border-radius: 10px;
+  padding: 3px;
+  background-color: teal;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  color: white;
+  width: 70px;
+  cursor: pointer;
 `;
 export default Detail;

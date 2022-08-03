@@ -9,7 +9,7 @@ const Home = () => {
   const todoList = useSelector((state) => {
     return state.todo.list;
   });
-
+  console.log(todoList);
   return (
     <Layout>
       <Form></Form>
