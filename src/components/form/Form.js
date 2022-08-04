@@ -3,11 +3,14 @@ import "./style.css";
 import { useDispatch } from "react-redux";
 // import { createTodos } from "../../redux/modules/todo_module";
 import { createTodos } from "../../redux/modules/todo_slice";
+
+// 고유값 생성을 위한 라이브러리
 import { v4 as uuidv4 } from "uuid";
 
 const Form = () => {
-  const title_input = useRef();
-  const content_input = useRef();
+  const new_id = uuidv4(); // 랜덤 아이디 생성
+  const title_input = useRef(); // 커서 옮겨주기위한 Ref
+  const content_input = useRef(); // 커서 옮겨주기위한 Ref
   const dispatch = useDispatch(); // dispatch 불러오기
   // input에서 받는 값
   const [inputs, setInputs] = useState({
@@ -36,9 +39,10 @@ const Form = () => {
       return null;
     } else {
       // 새로 만들어줄 객체 생성
+
       const newData = {
         ...inputs,
-        id: uuidv4(),
+        id: new_id,
       };
       // dispatch를 통해 todolist 작성
       dispatch(createTodos(newData));

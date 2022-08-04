@@ -8,10 +8,9 @@ const Detail = () => {
   const navigate = useNavigate();
 
   const todoList = useSelector((state) => {
-    return state.todo.list.filter((e) => {
-      return parseInt(e.id) === parseInt(param);
-    });
+    return state.todo.list.filter((e) => e.id === param);
   })[0];
+  // console.log(todoList);
   // 인덱스로 하는게 맞나..?
 
   return (
